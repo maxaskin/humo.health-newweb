@@ -1,0 +1,103 @@
+"use client";
+
+import Image from "next/image";
+import WaitlistForm from "./WaitlistForm";
+
+export default function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-surface to-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
+        <div className="max-w-xl">
+          <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+            iOS App — Waitlist Open
+          </p>
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-[3.5rem]">
+            Your early-warning radar for burnout.
+          </h1>
+          <p className="mt-5 text-lg leading-relaxed text-muted md:text-xl">
+            Most tools track your tasks. Humo protects your health while you
+            achieve them — catching burnout months earlier and guiding you back,
+            day by day.
+          </p>
+
+          <ul className="mt-8 space-y-3">
+            {[
+              "Spots risk ~3 months before you'd notice",
+              "Evidence-based 2-minute daily tools",
+              "Your data never leaves your phone",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-foreground">
+                <svg
+                  className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2.5}
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"
+                  />
+                </svg>
+                <span className="text-[15px]">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10">
+            <WaitlistForm variant="hero" />
+          </div>
+        </div>
+
+        <div className="relative flex justify-center md:justify-end">
+          <div className="relative">
+            <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-primary/10 blur-2xl" />
+            <div className="relative grid grid-cols-2 gap-3">
+              <div className="space-y-3">
+                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
+                  <Image
+                    src="/screenshots/insights.png"
+                    alt="Humo Insights — Humo Score 79 with domain tracking for Life Rhythm, Mind Space, Confidence, and Energy Flow"
+                    width={220}
+                    height={440}
+                    className="h-auto w-full"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
+                  <Image
+                    src="/screenshots/attachment.png"
+                    alt="Attachment Snapshot — psychological metrics with anxiety and avoidance scores across relationship contexts"
+                    width={220}
+                    height={440}
+                    className="h-auto w-full"
+                  />
+                </div>
+              </div>
+              <div className="mt-8 space-y-3">
+                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
+                  <Image
+                    src="/screenshots/tools-pinned.png"
+                    alt="Humo Tools — pinned protocols including Caffeine Audit, Morning Sunlight, and Evening Cognitive Shutdown"
+                    width={220}
+                    height={440}
+                    className="h-auto w-full"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
+                  <Image
+                    src="/screenshots/tools-protocols.png"
+                    alt="Humo Protocols — Movement Snacks, Protein-First Meals, Elite Practice Block, and Exposure Rep tools"
+                    width={220}
+                    height={440}
+                    className="h-auto w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
