@@ -12,7 +12,7 @@ export default function Evidence() {
     <section id="evidence" className="bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-widest text-primary uppercase">
+          <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
             Evidence-Based
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -29,10 +29,10 @@ export default function Evidence() {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-border/60 bg-white p-6 text-center"
+              className="rounded-2xl border border-border/80 bg-white p-6 text-center shadow-sm"
             >
               <p className="text-3xl font-bold text-primary">{s.value}</p>
-              <p className="mt-2 text-sm text-muted">{s.label}</p>
+              <p className="mt-2 text-sm text-foreground">{s.label}</p>
             </div>
           ))}
         </div>
@@ -63,7 +63,7 @@ export default function Evidence() {
                       d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-sm leading-relaxed text-muted">
+                  <span className="text-sm leading-relaxed text-foreground">
                     {item}
                   </span>
                 </li>
@@ -84,20 +84,20 @@ export default function Evidence() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-8">
+        <div className="mt-14 flex flex-wrap items-center justify-center gap-8 opacity-80">
           <Image
             src="/hipaa-badge.jpg"
             alt="HIPAA Compliant"
             width={80}
             height={80}
-            className="h-16 w-auto opacity-70 grayscale"
+            className="h-16 w-auto"
           />
           <Image
             src="/gdpr-badge.jpg"
             alt="EU GDPR Compliant"
             width={80}
             height={80}
-            className="h-16 w-auto opacity-70 grayscale"
+            className="h-16 w-auto"
           />
         </div>
       </div>

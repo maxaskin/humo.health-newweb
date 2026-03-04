@@ -29,7 +29,7 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-widest text-primary uppercase">
+          <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
             How It Works
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -49,7 +49,7 @@ export default function HowItWorks() {
               }`}
             >
               <div className="flex-1">
-                <span className="text-sm font-bold text-primary/40">
+                <span className="text-sm font-bold text-primary-dark">
                   {step.num}
                 </span>
                 <h3 className="mt-2 text-2xl font-bold text-foreground md:text-3xl">

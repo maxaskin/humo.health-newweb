@@ -39,13 +39,13 @@ export default function Problem() {
   ];
 
   return (
-    <section id="problem" className="bg-white py-20 md:py-28">
+    <section id="problem" className="bg-gradient-to-b from-white to-surface/50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-[#1a1a1a] md:text-4xl">
             Burnout doesn&apos;t always announce itself.
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
+          <p className="mt-4 text-lg leading-relaxed text-[#374151]">
             It builds quietly — through fatigue, restlessness, sleep that
             doesn&apos;t help, and tension that won&apos;t let go. By the time
             you recognize it, you&apos;re already months in.
@@ -56,12 +56,12 @@ export default function Problem() {
           {signs.map((sign) => (
             <div
               key={sign.title}
-              className="rounded-2xl border border-border/60 bg-surface/50 p-6 transition-colors hover:border-primary/30 hover:bg-surface"
+              className="rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:bg-surface/50"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
                 {sign.icon}
               </div>
-              <h3 className="mt-4 text-[15px] font-semibold text-foreground">
+              <h3 className="mt-4 text-[15px] font-semibold text-[#1a1a1a]">
                 {sign.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">

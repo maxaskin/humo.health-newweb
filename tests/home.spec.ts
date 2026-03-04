@@ -69,6 +69,79 @@ test.describe("Humo landing page - core UI", () => {
   });
 });
 
+test.describe("Humo landing page - visibility", () => {
+  test("problem section heading, paragraph, and card titles are visible", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const problem = page.locator("#problem");
+    await problem.scrollIntoViewIfNeeded();
+
+    await expect(
+      problem.getByRole("heading", {
+        name: /burnout doesn't always announce itself/i,
+      }),
+    ).toBeVisible();
+    await expect(
+      problem.getByText(/It builds quietly — through fatigue, restlessness/),
+    ).toBeVisible();
+    await expect(problem.getByText("Weekends don't refill you")).toBeVisible();
+    await expect(problem.getByText("Calendar dread")).toBeVisible();
+    await expect(problem.getByText("Fine on the outside")).toBeVisible();
+    await expect(problem.getByText("Energy leaks everywhere")).toBeVisible();
+  });
+
+  test("self-check section question and all checklist labels are visible", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const whoSection = page.locator("#who");
+    await whoSection.scrollIntoViewIfNeeded();
+
+    await expect(
+      page.getByText("Do any of these feel familiar in the last few weeks?"),
+    ).toBeVisible();
+
+    await expect(
+      page.getByText("I wake up feeling behind — almost every day"),
+    ).toBeVisible();
+    await expect(
+      page.getByText("I crash on weekends instead of resting"),
+    ).toBeVisible();
+    await expect(
+      page.getByText("I'm avoiding things that used to bring me joy"),
+    ).toBeVisible();
+  });
+
+  test("self-check card text is not same color as background", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    await page.locator("#who").scrollIntoViewIfNeeded();
+
+    const noInvisibleText = await page.evaluate(() => {
+      const section = document.getElementById("who");
+      if (!section) return { ok: false, reason: "section not found" };
+      const card = section.querySelector(".rounded-2xl.border-2");
+      if (!card) return { ok: false, reason: "card not found" };
+      const cardBg = window.getComputedStyle(card as HTMLElement).backgroundColor;
+      const norm = (s: string) =>
+        s.replace(/\s/g, "").toLowerCase();
+      const textNodes = card.querySelectorAll("h3, p, span");
+      for (const el of textNodes) {
+        const color = window.getComputedStyle(el as HTMLElement).color;
+        if (norm(color) === norm(cardBg))
+          return { ok: false, reason: "text same as background", el: (el as HTMLElement).textContent?.slice(0, 30) };
+        if (color.includes("0, 0, 0, 0") || color === "transparent")
+          return { ok: false, reason: "transparent text", el: (el as HTMLElement).textContent?.slice(0, 30) };
+      }
+      return { ok: true };
+    });
+
+    expect(noInvisibleText.ok, noInvisibleText.reason).toBe(true);
+  });
+});
+
 test.describe("Humo landing page - accessibility", () => {
   test("has no serious or critical accessibility violations", async ({ page }) => {
     await page.goto("/");

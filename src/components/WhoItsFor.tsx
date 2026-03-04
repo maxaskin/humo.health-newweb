@@ -26,7 +26,7 @@ export default function WhoItsFor() {
     <section id="who" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-widest text-primary uppercase">
+          <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
             Who It&apos;s For
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -43,7 +43,7 @@ export default function WhoItsFor() {
           {scenarios.map((s) => (
             <div
               key={s.role}
-              className="flex items-start gap-4 rounded-2xl border border-border/60 bg-surface/40 p-6"
+              className="flex items-start gap-4 rounded-2xl border border-border/80 bg-white p-6 shadow-sm hover:shadow-md hover:bg-surface/30 transition-all"
             >
               <span className="text-2xl">{s.emoji}</span>
               <div>
@@ -58,22 +58,25 @@ export default function WhoItsFor() {
           ))}
         </div>
 
-        <div className="mt-14 mx-auto max-w-xl rounded-2xl border border-primary/20 bg-primary/5 p-8 text-center">
-          <h3 className="text-lg font-semibold text-foreground">
+        <div className="mt-14 mx-auto max-w-xl rounded-2xl border-2 border-primary/40 bg-white p-8 text-center shadow-md">
+          <h3 className="text-lg font-semibold text-[#1a1a1a]">
             Quick self-check
           </h3>
-          <p className="mt-2 text-sm text-muted">
+          <p className="mt-2 text-sm text-[#374151]">
             Do any of these feel familiar in the last few weeks?
           </p>
-          <ul className="mt-5 space-y-3 text-left">
+          <ul className="mt-5 space-y-3 text-left" role="list">
             {[
               "I wake up feeling behind — almost every day",
               "I crash on weekends instead of resting",
               "I'm avoiding things that used to bring me joy",
             ].map((q) => (
               <li key={q} className="flex items-start gap-3">
-                <div className="mt-0.5 h-5 w-5 shrink-0 rounded border border-primary/40 bg-white" />
-                <span className="text-sm text-foreground">{q}</span>
+                <div
+                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-2 border-[#2d6a4f] bg-white"
+                  aria-hidden
+                />
+                <span className="text-sm font-medium text-[#1a1a1a]">{q}</span>
               </li>
             ))}
           </ul>

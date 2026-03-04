@@ -36,13 +36,13 @@ export default function Navbar() {
         <div className="hidden items-center gap-8 md:flex">
           <a
             href="#how-it-works"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+            className="text-sm font-medium text-muted transition-colors hover:text-primary"
           >
             How It Works
           </a>
           <a
             href="#resources"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+            className="text-sm font-medium text-muted transition-colors hover:text-primary"
           >
             Learn
           </a>
@@ -50,7 +50,7 @@ export default function Navbar() {
             href="https://humo.health/assessment"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-primary"
+            className="text-sm font-medium text-muted transition-colors hover:text-primary"
           >
             Self-Check
           </a>
@@ -91,14 +91,14 @@ export default function Navbar() {
             <a
               href="#how-it-works"
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium text-foreground/70"
+              className="text-sm font-medium text-muted"
             >
               How It Works
             </a>
             <a
               href="#resources"
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium text-foreground/70"
+              className="text-sm font-medium text-muted"
             >
               Learn
             </a>
@@ -106,7 +106,7 @@ export default function Navbar() {
               href="https://humo.health/assessment"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-foreground/70"
+              className="text-sm font-medium text-muted"
             >
               Self-Check
             </a>

@@ -23,9 +23,9 @@ const articles = [
 ];
 
 const tagColors: Record<string, string> = {
-  SUSTAIN: "bg-emerald-100 text-emerald-700",
-  RECOGNIZE: "bg-amber-100 text-amber-700",
-  RESTORE: "bg-sky-100 text-sky-700",
+  SUSTAIN: "bg-emerald-100 text-emerald-800",
+  RECOGNIZE: "bg-amber-100 text-amber-800",
+  RESTORE: "bg-sky-100 text-sky-800",
 };
 
 export default function Resources() {
@@ -33,7 +33,7 @@ export default function Resources() {
     <section id="resources" className="bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-widest text-primary uppercase">
+          <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
             Your Way Out of Burnout
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -48,11 +48,11 @@ export default function Resources() {
               href={a.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-2xl border border-border/60 bg-white p-6 transition-all hover:border-primary/30 hover:shadow-md"
+              className="group flex flex-col rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
             >
               <span
                 className={`inline-block self-start rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${
-                  tagColors[a.tag] || "bg-gray-100 text-gray-600"
+                  tagColors[a.tag] || "bg-gray-200 text-gray-800"
                 }`}
               >
                 {a.tag}

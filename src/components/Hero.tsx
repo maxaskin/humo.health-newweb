@@ -5,10 +5,11 @@ import WaitlistForm from "./WaitlistForm";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-surface to-white pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
+    <section className="relative overflow-hidden bg-gradient-to-br from-surface via-surface-alt to-white pt-28 pb-16 md:pt-36 md:pb-24">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,var(--color-primary)_0%,transparent_50%)] opacity-[0.07]" aria-hidden />
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16 relative">
         <div className="max-w-xl">
-          <p className="mb-4 inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+          <p className="mb-4 inline-block rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary-dark uppercase">
             iOS App — Waitlist Open
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-[3.5rem]">
@@ -52,7 +53,7 @@ export default function Hero() {
 
         <div className="relative flex justify-center md:justify-end">
           <div className="relative">
-            <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-primary/5 to-primary/10 blur-2xl" />
+            <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-primary/15 to-primary/5 blur-2xl" />
             <div className="relative grid grid-cols-2 gap-3">
               <div className="space-y-3">
                 <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">

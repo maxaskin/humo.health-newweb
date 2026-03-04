@@ -4,10 +4,11 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="relative overflow-hidden bg-gradient-to-b from-white via-surface to-surface-alt py-20 md:py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-surface/60 via-surface to-primary/10 py-20 md:py-28"
     >
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,var(--color-primary)_0%,transparent_60%)] opacity-20" aria-hidden />
+      <div className="absolute inset-0 opacity-40">
+        <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-2xl px-6 text-center">

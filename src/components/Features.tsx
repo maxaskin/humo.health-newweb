@@ -39,10 +39,10 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="bg-white py-20 md:py-28">
+    <section id="features" className="bg-gradient-to-b from-surface/50 to-white py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-widest text-primary uppercase">
+          <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
             Built for people who push through
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
@@ -54,13 +54,13 @@ export default function Features() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="group rounded-2xl border border-border/60 bg-surface/30 p-6 transition-all hover:border-primary/30 hover:bg-surface/70 hover:shadow-sm"
+              className="group rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:bg-surface/30"
             >
               <span className="text-2xl">{f.icon}</span>
               <h3 className="mt-3 text-base font-semibold text-foreground">
                 {f.title}
               </h3>
-              <p className="mt-0.5 text-xs font-medium text-primary">
+              <p className="mt-0.5 text-xs font-medium text-primary-dark">
                 {f.benefit}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
