@@ -8,6 +8,8 @@ export default function Problem() {
       ),
       title: "Weekends don't refill you",
       desc: "You crash instead of resting. Monday arrives and nothing has recovered.",
+      iconBg: "bg-accent-amber/15 text-accent-amber",
+      border: "border-t-accent-amber",
     },
     {
       icon: (
@@ -17,6 +19,8 @@ export default function Problem() {
       ),
       title: "Calendar dread",
       desc: "You flinch at notifications. Every meeting feels like something taken, not given.",
+      iconBg: "bg-accent-rose/15 text-accent-rose",
+      border: "border-t-accent-rose",
     },
     {
       icon: (
@@ -26,6 +30,8 @@ export default function Problem() {
       ),
       title: "Fine on the outside",
       desc: "You perform well, say 'I'm fine,' but something quiet has shifted underneath.",
+      iconBg: "bg-accent-purple/15 text-accent-purple",
+      border: "border-t-accent-purple",
     },
     {
       icon: (
@@ -35,6 +41,8 @@ export default function Problem() {
       ),
       title: "Energy leaks everywhere",
       desc: "Brain fog, irritability, broken sleep — your body is keeping score even if your mind won't.",
+      iconBg: "bg-accent-sky/15 text-accent-sky",
+      border: "border-t-accent-sky",
     },
   ];
 
@@ -42,10 +50,10 @@ export default function Problem() {
     <section id="problem" className="bg-gradient-to-b from-white to-surface/50 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-[#1a1a1a] md:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Burnout doesn&apos;t always announce itself.
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-[#374151]">
+          <p className="mt-4 text-lg leading-relaxed text-muted">
             It builds quietly — through fatigue, restlessness, sleep that
             doesn&apos;t help, and tension that won&apos;t let go. By the time
             you recognize it, you&apos;re already months in.
@@ -56,12 +64,12 @@ export default function Problem() {
           {signs.map((sign) => (
             <div
               key={sign.title}
-              className="rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:bg-surface/50"
+              className={`rounded-2xl border border-border/80 border-t-2 ${sign.border} bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:bg-surface/50`}
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${sign.iconBg}`}>
                 {sign.icon}
               </div>
-              <h3 className="mt-4 text-[15px] font-semibold text-[#1a1a1a]">
+              <h3 className="mt-4 text-[15px] font-semibold text-foreground">
                 {sign.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">

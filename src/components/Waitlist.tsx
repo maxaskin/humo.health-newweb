@@ -4,12 +4,14 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="relative overflow-hidden bg-gradient-to-b from-surface/60 via-surface to-primary/10 py-20 md:py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-surface/60 via-[#e4f0ec] to-primary/15 py-20 md:py-28"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,var(--color-primary)_0%,transparent_60%)] opacity-20" aria-hidden />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,var(--color-primary)_0%,transparent_60%)] opacity-25" aria-hidden />
       <div className="absolute inset-0 opacity-40">
         <div className="absolute top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-3xl" />
       </div>
+      <div className="absolute top-[20%] left-[10%] h-[300px] w-[300px] rounded-full bg-accent-teal/15 blur-3xl animate-pulse-soft" aria-hidden="true" />
+      <div className="absolute bottom-[20%] right-[10%] h-[250px] w-[250px] rounded-full bg-accent-purple/10 blur-3xl animate-pulse-soft [animation-delay:2s]" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-2xl px-6 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">

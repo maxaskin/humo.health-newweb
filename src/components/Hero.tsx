@@ -6,10 +6,13 @@ import WaitlistForm from "./WaitlistForm";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-surface via-surface-alt to-white pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,var(--color-primary)_0%,transparent_50%)] opacity-[0.07]" aria-hidden />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,var(--color-primary)_0%,transparent_50%)] opacity-[0.12]" aria-hidden />
+      <div className="absolute top-20 right-[10%] h-64 w-64 rounded-full bg-accent-teal/10 blur-3xl animate-pulse-soft" aria-hidden="true" />
+      <div className="absolute bottom-10 left-[5%] h-48 w-48 rounded-full bg-accent-purple/10 blur-3xl animate-pulse-soft [animation-delay:2s]" aria-hidden="true" />
+      <div className="absolute top-1/2 right-[30%] h-32 w-32 rounded-full bg-accent-amber/8 blur-2xl animate-float-slow" aria-hidden="true" />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16 relative">
         <div className="max-w-xl">
-          <p className="mb-4 inline-block rounded-full bg-primary/15 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary-dark uppercase">
+          <p className="mb-4 inline-block rounded-full bg-gradient-to-r from-primary/15 to-accent-teal/15 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary-dark uppercase">
             iOS App — Waitlist Open
           </p>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground md:text-5xl lg:text-[3.5rem]">

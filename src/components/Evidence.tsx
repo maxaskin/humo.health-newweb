@@ -2,14 +2,14 @@ import Image from "next/image";
 
 export default function Evidence() {
   const stats = [
-    { value: "83%", label: "of visitors join the waitlist" },
-    { value: "~3 mo", label: "earlier burnout detection (simulated)" },
-    { value: "2x", label: "faster recovery in modeled scenarios" },
-    { value: "~30", label: "limited beta seats remaining" },
+    { value: "83%", label: "of visitors join the waitlist", color: "text-primary", bar: "bg-primary/40" },
+    { value: "~3 mo", label: "earlier burnout detection (simulated)", color: "text-accent-teal", bar: "bg-accent-teal/40" },
+    { value: "2x", label: "faster recovery in modeled scenarios", color: "text-accent-purple", bar: "bg-accent-purple/40" },
+    { value: "~30", label: "limited beta seats remaining", color: "text-accent-amber", bar: "bg-accent-amber/40" },
   ];
 
   return (
-    <section id="evidence" className="bg-surface py-20 md:py-28">
+    <section id="evidence" className="bg-gradient-to-b from-surface via-surface to-[#e8f0ec] py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -29,9 +29,10 @@ export default function Evidence() {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="rounded-2xl border border-border/80 bg-white p-6 text-center shadow-sm"
+              className="relative overflow-hidden rounded-2xl border border-border/80 bg-white p-6 text-center shadow-sm"
             >
-              <p className="text-3xl font-bold text-primary">{s.value}</p>
+              <div className={`absolute top-0 left-0 right-0 h-1 ${s.bar}`} />
+              <p className={`text-3xl font-bold ${s.color}`}>{s.value}</p>
               <p className="mt-2 text-sm text-foreground">{s.label}</p>
             </div>
           ))}

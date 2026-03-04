@@ -22,10 +22,10 @@ const articles = [
   },
 ];
 
-const tagColors: Record<string, string> = {
-  SUSTAIN: "bg-emerald-100 text-emerald-800",
-  RECOGNIZE: "bg-amber-100 text-amber-800",
-  RESTORE: "bg-sky-100 text-sky-800",
+const tagMeta: Record<string, { badge: string; hover: string }> = {
+  SUSTAIN: { badge: "bg-emerald-100 text-emerald-800", hover: "hover:border-emerald-300" },
+  RECOGNIZE: { badge: "bg-amber-100 text-amber-800", hover: "hover:border-amber-300" },
+  RESTORE: { badge: "bg-sky-100 text-sky-800", hover: "hover:border-sky-300" },
 };
 
 export default function Resources() {
@@ -48,11 +48,11 @@ export default function Resources() {
               href={a.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all hover:border-primary/40 hover:shadow-md"
+              className={`group flex flex-col rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all ${tagMeta[a.tag]?.hover || "hover:border-primary/40"} hover:shadow-md`}
             >
               <span
                 className={`inline-block self-start rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${
-                  tagColors[a.tag] || "bg-gray-200 text-gray-800"
+                  tagMeta[a.tag]?.badge || "bg-gray-200 text-gray-800"
                 }`}
               >
                 {a.tag}

@@ -4,26 +4,34 @@ export default function WhoItsFor() {
       emoji: "💻",
       role: "Tech leads & engineers",
       line: "You've started dreading calendar notifications. Sprint planning feels like survival.",
+      accent: "border-l-accent-teal",
+      emojiBg: "bg-accent-teal/15",
     },
     {
       emoji: "🏥",
       role: "Healthcare professionals",
       line: "You take care of everyone else. Who takes care of you?",
+      accent: "border-l-accent-rose",
+      emojiBg: "bg-accent-rose/15",
     },
     {
       emoji: "📊",
       role: "Finance & consulting",
       line: "High performance is the expectation. Admitting fatigue isn't an option.",
+      accent: "border-l-accent-amber",
+      emojiBg: "bg-accent-amber/15",
     },
     {
       emoji: "🎓",
       role: "Researchers & academics",
       line: "Publish-or-perish pressure has crept into weekends, sleep, and self-worth.",
+      accent: "border-l-accent-purple",
+      emojiBg: "bg-accent-purple/15",
     },
   ];
 
   return (
-    <section id="who" className="bg-white py-20 md:py-28">
+    <section id="who" className="bg-gradient-to-b from-white to-surface/30 py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -43,9 +51,11 @@ export default function WhoItsFor() {
           {scenarios.map((s) => (
             <div
               key={s.role}
-              className="flex items-start gap-4 rounded-2xl border border-border/80 bg-white p-6 shadow-sm hover:shadow-md hover:bg-surface/30 transition-all"
+              className={`flex items-start gap-4 rounded-2xl border border-border/80 border-l-4 ${s.accent} bg-white p-6 shadow-sm hover:shadow-md hover:bg-surface/30 transition-all`}
             >
-              <span className="text-2xl">{s.emoji}</span>
+              <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${s.emojiBg}`}>
+                <span className="text-xl">{s.emoji}</span>
+              </div>
               <div>
                 <h3 className="text-sm font-semibold text-foreground">
                   {s.role}
@@ -59,10 +69,10 @@ export default function WhoItsFor() {
         </div>
 
         <div className="mt-14 mx-auto max-w-xl rounded-2xl border-2 border-primary/40 bg-white p-8 text-center shadow-md">
-          <h3 className="text-lg font-semibold text-[#1a1a1a]">
+          <h3 className="text-lg font-semibold text-foreground">
             Quick self-check
           </h3>
-          <p className="mt-2 text-sm text-[#374151]">
+          <p className="mt-2 text-sm text-muted">
             Do any of these feel familiar in the last few weeks?
           </p>
           <ul className="mt-5 space-y-3 text-left" role="list">
@@ -73,10 +83,10 @@ export default function WhoItsFor() {
             ].map((q) => (
               <li key={q} className="flex items-start gap-3">
                 <div
-                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-2 border-[#2d6a4f] bg-white"
+                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-2 border-primary bg-white"
                   aria-hidden
                 />
-                <span className="text-sm font-medium text-[#1a1a1a]">{q}</span>
+                <span className="text-sm font-medium text-foreground">{q}</span>
               </li>
             ))}
           </ul>
