@@ -49,39 +49,33 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-16 space-y-20 md:space-y-28">
-          {steps.map((step, i) => (
-            <div
-              key={step.num}
-              className={`flex flex-col items-center gap-10 md:gap-16 ${
-                i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
-            >
-              <div className="flex-1">
-                <div className="flex items-center gap-3">
-                  <div className={`flex h-8 w-8 items-center justify-center rounded-full ${step.dotBg}`}>
-                    <span className={`text-sm font-bold ${step.numColor}`}>{step.num}</span>
-                  </div>
-                  <div className={`hidden h-0.5 w-12 rounded-full md:block ${step.dotBg}`} />
-                </div>
-                <h3 className="mt-2 text-2xl font-bold text-foreground md:text-3xl">
-                  {step.title}
-                </h3>
-                <p className="mt-4 text-base leading-relaxed text-muted">
-                  {step.desc}
-                </p>
-              </div>
-              <div className="relative w-full max-w-[260px] flex-shrink-0">
-                <div className={`absolute -inset-4 rounded-[2rem] ${step.glow} blur-xl`} aria-hidden="true" />
-                <div className="relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-white shadow-xl">
+        <div className="mt-14 grid gap-8 md:grid-cols-3">
+          {steps.map((step) => (
+            <div key={step.num} className="flex flex-col items-center text-center">
+              <div className="relative mx-auto w-full max-w-[200px]">
+                <div className={`absolute -inset-3 rounded-[2rem] ${step.glow} blur-xl`} aria-hidden="true" />
+                <div className="relative overflow-hidden rounded-[1.5rem] border border-border/50 bg-white shadow-lg">
                   <Image
                     src={step.screenshot}
                     alt={step.alt}
-                    width={260}
-                    height={520}
+                    width={200}
+                    height={400}
                     className="h-auto w-full"
                   />
                 </div>
+              </div>
+              <div className="mt-6">
+                <div className="flex items-center justify-center gap-2">
+                  <div className={`flex h-7 w-7 items-center justify-center rounded-full ${step.dotBg}`}>
+                    <span className={`text-xs font-bold ${step.numColor}`}>{step.num}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground">
+                    {step.title}
+                  </h3>
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
+                  {step.desc}
+                </p>
               </div>
             </div>
           ))}
