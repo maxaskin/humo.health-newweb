@@ -48,12 +48,10 @@ export default function Resources() {
               href={a.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex flex-col rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all ${tagMeta[a.tag]?.hover || "hover:border-primary/40"} hover:shadow-md`}
+              className={`group flex flex-col rounded-2xl border border-border/80 bg-white p-6 shadow-sm transition-all ${tagMeta[a.tag].hover} hover:shadow-md`}
             >
               <span
-                className={`inline-block self-start rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${
-                  tagMeta[a.tag]?.badge || "bg-gray-200 text-gray-800"
-                }`}
+                className={`inline-block self-start rounded-full px-3 py-1 text-[10px] font-bold tracking-wider uppercase ${tagMeta[a.tag].badge}`}
               >
                 {a.tag}
               </span>

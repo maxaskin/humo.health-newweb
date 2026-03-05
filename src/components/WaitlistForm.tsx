@@ -51,9 +51,7 @@ export default function WaitlistForm({ variant = "hero" }: Props) {
   return (
     <form onSubmit={handleSubmit} className={isFooter ? "mx-auto max-w-md" : ""}>
       <div
-        className={`flex gap-3 ${
-          isFooter ? "flex-col sm:flex-row" : "flex-col sm:flex-row"
-        }`}
+        className="flex flex-col gap-3 sm:flex-row"
       >
         <input
           type="email"

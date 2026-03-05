@@ -1,44 +1,23 @@
 @import "tailwindcss";
 
-/* Readability: strong contrast on white. Muted text meets WCAG AA. */
-:root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
-  --muted: #374151;
-  --muted-light: #4b5563;
-  --primary: #2d6a4f;
-  --primary-dark: #1b4332;
-  --primary-light: #40916c;
-  --surface: #f0f7f4;
-  --surface-alt: #e8f0ec;
-  --border: #c4d4cc;
-  --accent-warm: #b08968;
-  --accent-teal: #0d9488;
-  --accent-purple: #7c6f9c;
-  --accent-rose: #c2727e;
-  --accent-sky: #4a90b8;
-  --accent-amber: #a57520;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-muted-light: var(--muted-light);
-  --color-primary: var(--primary);
-  --color-primary-dark: var(--primary-dark);
-  --color-primary-light: var(--primary-light);
-  --color-surface: var(--surface);
-  --color-surface-alt: var(--surface-alt);
-  --color-border: var(--border);
-  --color-accent-warm: var(--accent-warm);
-  --color-accent-teal: var(--accent-teal);
-  --color-accent-purple: var(--accent-purple);
-  --color-accent-rose: var(--accent-rose);
-  --color-accent-sky: var(--accent-sky);
-  --color-accent-amber: var(--accent-amber);
+  --color-background: #ffffff;
+  --color-foreground: #1a1a1a;
+  --color-muted: #374151;
+  --color-muted-light: #4b5563;
+  --color-primary: #2d6a4f;
+  --color-primary-dark: #1b4332;
+  --color-primary-light: #40916c;
+  --color-surface: #f0f7f4;
+  --color-surface-alt: #e8f0ec;
+  --color-border: #c4d4cc;
+  --color-accent-warm: #b08968;
+  --color-accent-teal: #0d9488;
+  --color-accent-purple: #7c6f9c;
+  --color-accent-rose: #c2727e;
+  --color-accent-sky: #4a90b8;
+  --color-accent-amber: #a57520;
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 /* Force light mode — override Tailwind v4 preflight dark-mode defaults */
@@ -60,7 +39,7 @@
     --color-accent-purple: #7c6f9c;
     --color-accent-rose: #c2727e;
     --color-accent-sky: #4a90b8;
-    --color-accent-amber: #c59034;
+    --color-accent-amber: #a57520;
   }
 }
 
@@ -70,16 +49,14 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
 }
 
 ::selection {
   background: rgba(45, 106, 79, 0.2);
 }
 
-/* Decorative animations */
 @keyframes float-slow {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50% { transform: translateY(-8px) rotate(2deg); }
