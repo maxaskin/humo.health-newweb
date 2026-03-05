@@ -55,49 +55,17 @@ export default function Hero() {
         </div>
 
         <div className="relative flex justify-center md:justify-end">
-          <div className="relative">
-            <div className="absolute -inset-8 rounded-[2rem] bg-gradient-to-br from-primary/15 to-primary/5 blur-2xl" />
-            <div className="relative grid grid-cols-2 gap-3">
-              <div className="space-y-3">
-                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
-                  <Image
-                    src="/screenshots/insights.png"
-                    alt="Humo Insights — Humo Score 79 with domain tracking for Life Rhythm, Mind Space, Confidence, and Energy Flow"
-                    width={220}
-                    height={440}
-                    className="h-auto w-full"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
-                  <Image
-                    src="/screenshots/attachment.png"
-                    alt="Attachment Snapshot — psychological metrics with anxiety and avoidance scores across relationship contexts"
-                    width={220}
-                    height={440}
-                    className="h-auto w-full"
-                  />
-                </div>
-              </div>
-              <div className="mt-8 space-y-3">
-                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
-                  <Image
-                    src="/screenshots/tools-pinned.png"
-                    alt="Humo Tools — pinned protocols including Caffeine Audit, Morning Sunlight, and Evening Cognitive Shutdown"
-                    width={220}
-                    height={440}
-                    className="h-auto w-full"
-                  />
-                </div>
-                <div className="overflow-hidden rounded-2xl border border-border/50 shadow-lg">
-                  <Image
-                    src="/screenshots/tools-protocols.png"
-                    alt="Humo Protocols — Movement Snacks, Protein-First Meals, Elite Practice Block, and Exposure Rep tools"
-                    width={220}
-                    height={440}
-                    className="h-auto w-full"
-                  />
-                </div>
-              </div>
+          <div className="relative w-full max-w-[280px]">
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-primary/15 to-accent-teal/10 blur-2xl" aria-hidden="true" />
+            <div className="relative overflow-hidden rounded-[2rem] border border-border/50 bg-white shadow-2xl">
+              <Image
+                src="/screenshots/insights.png"
+                alt="Humo Insights — Humo Score 79 with domain tracking for Life Rhythm, Mind Space, Confidence, and Energy Flow"
+                width={280}
+                height={560}
+                priority
+                className="h-auto w-full"
+              />
             </div>
           </div>
         </div>
