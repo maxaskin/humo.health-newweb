@@ -9,7 +9,7 @@ export default function Evidence() {
   ];
 
   return (
-    <section id="evidence" className="bg-gradient-to-b from-surface via-surface to-[#e8f0ec] py-12 md:py-16">
+    <section id="evidence" className="bg-gradient-to-b from-surface via-surface to-[#e8f0ec] py-8 md:py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -25,7 +25,7 @@ export default function Evidence() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((s) => (
             <div
               key={s.label}
@@ -38,7 +38,7 @@ export default function Evidence() {
           ))}
         </div>
 
-        <div className="mt-10 grid items-center gap-10 md:grid-cols-2 md:gap-16">
+        <div className="mt-7 grid items-center gap-10 md:grid-cols-2 md:gap-16">
           <div>
             <h3 className="text-xl font-bold text-foreground">
               Why it&apos;s different

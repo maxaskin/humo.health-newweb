@@ -47,7 +47,7 @@ export default function Problem() {
   ];
 
   return (
-    <section id="problem" className="bg-gradient-to-b from-white to-surface/50 py-12 md:py-16">
+    <section id="problem" className="bg-gradient-to-b from-white to-surface/50 py-8 md:py-12">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
