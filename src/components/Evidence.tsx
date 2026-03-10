@@ -84,23 +84,6 @@ export default function Evidence() {
             </div>
           </div>
         </div>
-
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-8 opacity-80">
-          <Image
-            src="/hipaa-badge.jpg"
-            alt="HIPAA Compliant"
-            width={80}
-            height={80}
-            className="h-16 w-auto"
-          />
-          <Image
-            src="/gdpr-badge.jpg"
-            alt="EU GDPR Compliant"
-            width={80}
-            height={80}
-            className="h-16 w-auto"
-          />
-        </div>
       </div>
     </section>
   );
