@@ -31,7 +31,7 @@ export default function WhoItsFor() {
   ];
 
   return (
-    <section id="who" className="bg-gradient-to-b from-white to-surface/30 py-8 md:py-12">
+    <section id="who" className="bg-gradient-to-b from-white to-surface/30 py-3 md:py-4">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">

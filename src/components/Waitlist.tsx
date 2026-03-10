@@ -4,7 +4,7 @@ export default function Waitlist() {
   return (
     <section
       id="waitlist"
-      className="relative overflow-hidden bg-gradient-to-b from-surface/60 via-[#e4f0ec] to-primary/15 py-8 md:py-12"
+      className="relative overflow-hidden bg-gradient-to-b from-surface/60 via-[#e4f0ec] to-primary/15 py-3 md:py-4"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_100%,var(--color-primary)_0%,transparent_60%)] opacity-25" aria-hidden />
       <div className="absolute inset-0 opacity-40">

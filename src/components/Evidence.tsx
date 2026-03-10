@@ -9,7 +9,7 @@ export default function Evidence() {
   ];
 
   return (
-    <section id="evidence" className="bg-gradient-to-b from-surface via-surface to-[#e8f0ec] py-8 md:py-12">
+    <section id="evidence" className="bg-gradient-to-b from-surface via-surface to-[#e8f0ec] py-3 md:py-4">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">

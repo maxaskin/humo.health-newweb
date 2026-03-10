@@ -45,7 +45,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="bg-gradient-to-b from-[#eef6f2] via-white to-white py-8 md:py-12">
+    <section id="features" className="bg-gradient-to-b from-[#eef6f2] via-white to-white py-3 md:py-4">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
