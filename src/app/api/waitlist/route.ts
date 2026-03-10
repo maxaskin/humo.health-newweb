@@ -1,24 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
 
-const DATA_FILE = path.join(process.cwd(), "waitlist.json");
-
-async function readEntries(): Promise<{ email: string; date: string }[]> {
-  try {
-    const raw = await fs.readFile(DATA_FILE, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return [];
-  }
-}
-
-async function writeEntries(entries: { email: string; date: string }[]) {
-  await fs.writeFile(DATA_FILE, JSON.stringify(entries, null, 2));
-}
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
 
 export async function POST(req: NextRequest) {
   try {
+    if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
+      console.error("Missing SUPABASE_URL or SUPABASE_SERVICE_KEY env vars");
+      return NextResponse.json(
+        { error: "Server misconfigured" },
+        { status: 500 },
+      );
+    }
+
     const body = await req.json();
     const email = (body.email ?? "").trim().toLowerCase();
 
@@ -29,16 +23,45 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const entries = await readEntries();
-    if (entries.some((e) => e.email === email)) {
+    // Check if already on the list
+    const checkRes = await fetch(
+      `${SUPABASE_URL}/rest/v1/waitlist?email=eq.${encodeURIComponent(email)}&select=email`,
+      {
+        headers: {
+          apikey: SUPABASE_SERVICE_KEY,
+          Authorization: `Bearer ${SUPABASE_SERVICE_KEY}`,
+        },
+      },
+    );
+
+    if (!checkRes.ok) {
+      throw new Error(`Supabase check failed: ${checkRes.status}`);
+    }
+
+    const existing = await checkRes.json();
+    if (existing.length > 0) {
       return NextResponse.json({ message: "Already on the list" });
     }
 
-    entries.push({ email, date: new Date().toISOString() });
-    await writeEntries(entries);
+    // Insert new entry
+    const insertRes = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
+      method: "POST",
+      headers: {
+        apikey: SUPABASE_SERVICE_KEY,
+        Authorization: `Bearer ${SUPABASE_SERVICE_KEY}`,
+        "Content-Type": "application/json",
+        Prefer: "return=minimal",
+      },
+      body: JSON.stringify({ email, created_at: new Date().toISOString() }),
+    });
+
+    if (!insertRes.ok) {
+      throw new Error(`Supabase insert failed: ${insertRes.status}`);
+    }
 
     return NextResponse.json({ message: "Added to waitlist" });
-  } catch {
+  } catch (err) {
+    console.error("Waitlist error:", err);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 },
