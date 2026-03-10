@@ -24,7 +24,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-gradient-to-b from-surface to-[#e4f0ec] py-3 md:py-4">
+    <section id="how-it-works" className="bg-gradient-to-b from-surface to-[#e4f0ec] py-8 md:py-10">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">

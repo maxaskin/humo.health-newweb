@@ -3,7 +3,7 @@ import WaitlistForm from "./WaitlistForm";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-surface via-surface-alt to-white pt-24 pb-3 md:pt-32 md:pb-4">
+    <section className="relative overflow-hidden bg-gradient-to-br from-surface via-surface-alt to-white pt-24 pb-8 md:pt-32 md:pb-10">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,var(--color-primary)_0%,transparent_50%)] opacity-[0.12]" aria-hidden />
       <div className="absolute top-20 right-[10%] h-64 w-64 rounded-full bg-accent-teal/10 blur-3xl animate-pulse-soft" aria-hidden="true" />
       <div className="absolute bottom-10 left-[5%] h-48 w-48 rounded-full bg-accent-purple/10 blur-3xl animate-pulse-soft [animation-delay:2s]" aria-hidden="true" />
