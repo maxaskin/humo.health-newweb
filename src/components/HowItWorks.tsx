@@ -24,7 +24,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="bg-gradient-to-b from-surface to-[#e4f0ec] py-20 md:py-28">
+    <section id="how-it-works" className="bg-gradient-to-b from-surface to-[#e4f0ec] py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -38,7 +38,7 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
           {steps.map((step) => (
             <div
               key={step.num}

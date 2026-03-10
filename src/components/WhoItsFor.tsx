@@ -31,7 +31,7 @@ export default function WhoItsFor() {
   ];
 
   return (
-    <section id="who" className="bg-gradient-to-b from-white to-surface/30 py-20 md:py-28">
+    <section id="who" className="bg-gradient-to-b from-white to-surface/30 py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -47,7 +47,7 @@ export default function WhoItsFor() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {scenarios.map((s) => (
             <div
               key={s.role}

@@ -45,7 +45,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="bg-gradient-to-b from-[#eef6f2] via-white to-white py-20 md:py-28">
+    <section id="features" className="bg-gradient-to-b from-[#eef6f2] via-white to-white py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -56,7 +56,7 @@ export default function Features() {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => (
             <div
               key={f.title}

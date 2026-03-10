@@ -30,7 +30,7 @@ const tagMeta: Record<string, { badge: string; hover: string }> = {
 
 export default function Resources() {
   return (
-    <section id="resources" className="bg-surface py-20 md:py-28">
+    <section id="resources" className="bg-surface py-12 md:py-16">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold tracking-widest text-primary-dark uppercase">
@@ -41,7 +41,7 @@ export default function Resources() {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
           {articles.map((a) => (
             <a
               key={a.title}
